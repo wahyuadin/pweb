@@ -1,18 +1,64 @@
 <?php 
-	include "header.php";
-?>
-<!-- header conten -->
+	include "headerds.php";
+ ?>
+ <!--content -->
+   <div class="container">
+   	<div class="row">	
+   </div>
+   <div class="row">
+   		<div class="col-lg mt-4">
+   			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Peminjaman</h5>
+    			<p class="card-text">Jumlah transaksi peminjaman buku <b>5</b></p>
+    			<a href="#" class="btn btn-primary">Peminjaman</a>
+  			</div>
+			</div>
+   		</div>
+   		<div class="col-lg mt-4">
+   			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Pengembalian</h5>
+    			<p class="card-text">Jumlah transaksi pengembalian buku <b>2</b></p>
+    			<a href="#" class="btn btn-primary">Pengembalian</a>
+  			</div>
+			</div>
+   		</div>
+   		<div class="col-lg mt-4">
+   			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Data Buku</h5>
+    			<p class="card-text">Jumlah buku <br>yang tersedia <b>2</b></p>
+    			<a href="#" class="btn btn-primary">Data Buku</a>
+  			</div>
+			</div>
+   		</div>
+   		<div class="col-lg mt-4">
+   			<div class="card">
+  			<div class="card-body">
+    			<h5 class="card-title">Data Siswa</h5>
+    			<p class="card-text">Jumlah siswa yang ada <b>3</b> siswa</p>
+    			<a href="#" class="btn btn-primary">Data Siswa</a>
+  			</div>
+			</div>
+   		</div>
+   </div>
+  </div>
+    <!--Akhir Content-->
+
+
+    <!-- header conten -->
 	<div class="container">
 	<div class="row" style="min-height: 570px">
 		<div class="col-lg-12 mt-4">
 			<div class="card">
   			<div class="card-header">
-    		Data Kategori
+    		Perpustakaan Digital
   			</div>
   			<div class="card-body">
   				<div class="row">
   					<div class="col">
-  						<a href="tambah_kategori.php" class="btn btn-primary">Tambah Data</a>
+  						<h3>Daftar Buku</h3>
   					</div>
   					<div class="col">
   						<form class="form-inline float-right" method="GET">
@@ -26,10 +72,9 @@
   						<table class="table table-bordered table-striped">
   							<tr>
   								<th>No</th>
-  								<th>Kode Kategori</th>
-  								<th>Nama Kategori</th>
+  								<th>Kode Buku</th>
+  								<th>Nama buku</th>
                   <th>Penerbit</th>
-                  <th>Aksi</th>
   							</tr>
                 <?php
                   if (isset($_GET['cari'])){
@@ -46,7 +91,6 @@
                   <td><?php echo $ambil_data['id_kategori']; ?></td>
                   <td><?php echo $ambil_data['nama_kategori']; ?></td>
                   <td><?php echo $ambil_data['penerbit']; ?></td>
-                  <td><a href="edit_kategori.php?id=<?php echo $ambil_data['id_kategori']; ?>" class="btn btn-warning">Edit</a>    <a href="hapus_kategori.php?id=<?php echo $ambil_data['id_kategori']; ?>" class="btn btn-danger">Hapus</a></td>
                 </tr>
                 <?php 
                   }
@@ -61,6 +105,7 @@
 </div>
 <!-- header conten akhir -->
 
-<?php
-	include "footer.php";
+
+ <?php 
+ 	include "footerds.php";
  ?>

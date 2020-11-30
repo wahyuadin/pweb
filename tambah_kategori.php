@@ -14,8 +14,12 @@
             <div class="col">
                 <form action="simpan_kategori.php" method="POST">
                   <div class="form-group">
-                    <label for="">Nama Kategori</label>
-                    <input type="text" class="form-control" placeholder="Input Nama Kategori" name="nama_kategori">
+                    <label for="">Nama Buku</label>
+                    <input type="text" class="form-control" placeholder="Input Nama Buku" name="nama_kategori">
+                  </div>
+                  <div class="form-group">
+                    <label for="">Nama Penerbit</label>
+                    <input type="text" class="form-control" placeholder="Input Nama Penerbit" name="penerbit">
                   </div>
                   <input type="submit" class="btn btn-primary" value="Simpan">
                 </form>
