@@ -1,10 +1,10 @@
 <?php 
 	include "header.php";
  ?>
- 	<div class="container">
+ 	<div class="container w-50 p-4">
  		<div class="row">
  			<div class="col-lg-12 mt-4">	
- 				<h4>Silahkan Login Disini</h4><br>
+ 				<h3 class="mt-4">Silahkan Login Disini</h3><br>
  	<form action="verivikasi.php" method="POST">
   	<div class="form-group">
     <label for="exampleInputEmail1" >Username</label>
@@ -24,7 +24,7 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
 
     <label class="form-check-label" for="exampleCheck1">Ingatkan Saya</label>
-    <small id="emailHelp" class="form-text text-muted">Belum Punya Akun ? Daftar <a href="pendaftaran.php">Di Sini</a>
+    <small id="emailHelp" class="form-text text-muted">Belum Punya Akun ? Daftar <a href="registrasi/registrasi.php">Di Sini</a>
     </small>
   </div>
   <button type="submit" class="btn btn-primary">Login</button>

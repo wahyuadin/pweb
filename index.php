@@ -42,7 +42,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="pengembalian.php">Daftar</a>
+          <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a>
         </div>
       </li>
      
