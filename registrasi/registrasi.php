@@ -69,30 +69,30 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Nama Depan</label>
-      <input type="text" class="form-control" placeholder="Masukan Nama Depan">
+      <input type="text" class="form-control" name="nama_depan" autofocus placeholder="Masukan Nama Depan" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Nama Belakang</label>
-      <input type="text" class="form-control" name="" placeholder="Masukan Nama Belakang" autofocus>
+      <input type="text" class="form-control" name="nama_belakang" placeholder="Masukan Nama Belakang" autofocus required>
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Username</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Masukan Username Baru">
+    <input type="text" class="form-control" name="username" placeholder="Masukan Username Baru" autofocus required>
   </div>
   <div class="form-group">
     <label for="inputAddress2">Password</label>
-    <input type="Password" class="form-control" id="inputAddress2" placeholder="Masukan Password Baru">
+    <input type="Password" class="form-control" name="password" placeholder="Masukan Password Baru" autofocus required>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">No Telephon</label>
-      <input type="text" class="form-control" name="telp" placeholder="Masukan No Telepon">
+      <input type="text" class="form-control" name="telp" placeholder="Masukan No Telepon" autofocus required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputState">Status</label>
-      <select id="inputState" class="form-control">
-        <option selected>Pilih Salah Satu</option>
+      <select id="inputState" class="form-control" required>
+        <option selected>---- Pilih Salah Satu ----</option>
         <option value="pelajar">Pelajar</option>
         <option>Guru (Coming Soon)</option>
       </select>
