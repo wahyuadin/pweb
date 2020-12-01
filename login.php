@@ -9,7 +9,7 @@
   	<div class="form-group">
     <label for="exampleInputEmail1" >Username</label>
     <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Masukan Username">
-    <small id="emailHelp" class="form-text text-muted">Masukan Username & Password untuk maasuk menu perpustakaan digital</small>
+    
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
@@ -17,16 +17,15 @@
   </div>
 
 
-<div class="form-group">
-    <label for="exampleInputEmail1" >Kategori</label>
-    <input type="text" class="form-control" name="kategori_login" aria-describedby="emailHelp" placeholder="Masukan Username">
-    <small id="emailHelp" class="form-text text-muted">Masukan Username & Password untuk maasuk menu perpustakaan digital</small>
-  </div>
+
 
 
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+
     <label class="form-check-label" for="exampleCheck1">Ingatkan Saya</label>
+    <small id="emailHelp" class="form-text text-muted">Belum Punya Akun ? Daftar <a href="pendaftaran.php">Di Sini</a>
+    </small>
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
   <br>
