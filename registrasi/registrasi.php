@@ -98,7 +98,7 @@
       </select>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Daftar</button>
+  <button type="submit" class="btn btn-primary" name="tombol">Daftar</button>
 </form>
 </div>
 </body>

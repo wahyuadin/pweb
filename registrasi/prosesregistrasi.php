@@ -1,39 +1,20 @@
-
-
 <?php
-include "../koneksi.php";
-function register($username,$password,$level)
-	{	
-		$insert = mysqli_query($this->koneksi,"INSERT into admin values ('','$username','$password','level')");
-		return $insert;
-	}
-
-	function login($username,$password,$level)
-	{
-		$query = mysqli_query($this->koneksi,"SELECT * FROM admin where username='$username'");
-		$data_user = $query->fetch_array();
-		if(password_verify($password,$data_user['password']))
-		{
-			
-			if($remember)
-			{
-				setcookie('username', $username, time() + (60 * 60 * 24 * 5), '/');
-				setcookie('level', $data_user['level'], time() + (60 * 60 * 24 * 5), '/');
-			}
-			$_SESSION['username'] = $username;
-			$_SESSION['level'] = $data_user['level'];
-			$_SESSION['is_login'] = TRUE;
-			return TRUE;
+	if (isset($_POST['tombol'])) {
+		include '../koneksi.php';
+		$daftar = mysqli_query($koneksi, "INSERT INTO admin VALUES(NULL,
+			'".$_POST['nama_depan']."'
+			'".$_POST['nama_belakang']."',
+			'".$_POST['username']."',
+			'".$_POST['password']."',
+			'".$_POST['telp']."',
+			'".$_POST['level']."-'".$_POST['telp']."')");
+		if($daftar){
+			echo "berhasil Daftar";
+		}else{
+			echo "Gagal Daftar";
 		}
 	}
 
-	function relogin($username)
-	{
-		$query = mysqli_query($this->koneksi,"SELECT * from admin where username='$username'");
-		$data_user = $query->fetch_array();
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = $data_user['level'];
-		$_SESSION['is_login'] = TRUE;
-	}
 
 ?>
+
