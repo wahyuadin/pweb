@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2020 pada 19.32
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.2.32
+-- Generation Time: Dec 01, 2020 at 12:14 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,27 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
   `Id_admin` int(11) NOT NULL,
-  `nama_lengkap` varchar(100) DEFAULT NULL,
+  `nama_depan` varchar(255) DEFAULT NULL,
+  `nama_belakang` varchar(255) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  `telp` varchar(255) DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`Id_admin`, `nama_lengkap`, `username`, `password`) VALUES
-(1, 'wahyu', 'admin', 'admin');
+INSERT INTO `admin` (`Id_admin`, `nama_depan`, `nama_belakang`, `username`, `password`, `telp`, `level`) VALUES
+(1, 'wahyu', 'adin', 'siswa', 'siswa', '085711115140', 'siswa'),
+(2, 'netsian', 'admin', 'admin', 'admin', '77672767', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `buku`
+-- Table structure for table `buku`
 --
 
 CREATE TABLE `buku` (
@@ -63,7 +67,7 @@ CREATE TABLE `buku` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_peminjaman`
+-- Table structure for table `detail_peminjaman`
 --
 
 CREATE TABLE `detail_peminjaman` (
@@ -75,18 +79,27 @@ CREATE TABLE `detail_peminjaman` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(52) DEFAULT NULL
+  `id_kategori` int(6) NOT NULL,
+  `nama_kategori` varchar(52) DEFAULT NULL,
+  `penerbit` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `penerbit`) VALUES
+(1, 'Sejarah', 'Erlangga'),
+(2, 'IPA', 'Erlangga');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peminjaman`
+-- Table structure for table `peminjaman`
 --
 
 CREATE TABLE `peminjaman` (
@@ -101,7 +114,7 @@ CREATE TABLE `peminjaman` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penerbit`
+-- Table structure for table `penerbit`
 --
 
 CREATE TABLE `penerbit` (
@@ -113,7 +126,7 @@ CREATE TABLE `penerbit` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengadaan`
+-- Table structure for table `pengadaan`
 --
 
 CREATE TABLE `pengadaan` (
@@ -129,7 +142,7 @@ CREATE TABLE `pengadaan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengembalian`
+-- Table structure for table `pengembalian`
 --
 
 CREATE TABLE `pengembalian` (
@@ -143,7 +156,7 @@ CREATE TABLE `pengembalian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penulis`
+-- Table structure for table `penulis`
 --
 
 CREATE TABLE `penulis` (
@@ -154,7 +167,7 @@ CREATE TABLE `penulis` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -171,7 +184,7 @@ CREATE TABLE `siswa` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `temp_peminjaman`
+-- Table structure for table `temp_peminjaman`
 --
 
 CREATE TABLE `temp_peminjaman` (
@@ -185,95 +198,95 @@ CREATE TABLE `temp_peminjaman` (
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`Id_admin`);
 
 --
--- Indeks untuk tabel `buku`
+-- Indexes for table `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`Id_buku`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `peminjaman`
+-- Indexes for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`Id_peminjaman`);
 
 --
--- Indeks untuk tabel `penerbit`
+-- Indexes for table `penerbit`
 --
 ALTER TABLE `penerbit`
   ADD PRIMARY KEY (`Id_penerbit`);
 
 --
--- Indeks untuk tabel `pengadaan`
+-- Indexes for table `pengadaan`
 --
 ALTER TABLE `pengadaan`
   ADD PRIMARY KEY (`Id_pengadaan`);
 
 --
--- Indeks untuk tabel `pengembalian`
+-- Indexes for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
   ADD PRIMARY KEY (`Id_kembali`);
 
 --
--- Indeks untuk tabel `penulis`
+-- Indexes for table `penulis`
 --
 ALTER TABLE `penulis`
   ADD PRIMARY KEY (`Id_penulis`);
 
 --
--- Indeks untuk tabel `siswa`
+-- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`nisn`);
 
 --
--- Indeks untuk tabel `temp_peminjaman`
+-- Indexes for table `temp_peminjaman`
 --
 ALTER TABLE `temp_peminjaman`
   ADD PRIMARY KEY (`Id_temp`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_kategori` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `penerbit`
+-- AUTO_INCREMENT for table `penerbit`
 --
 ALTER TABLE `penerbit`
   MODIFY `Id_penerbit` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `penulis`
+-- AUTO_INCREMENT for table `penulis`
 --
 ALTER TABLE `penulis`
   MODIFY `Id_penulis` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `temp_peminjaman`
+-- AUTO_INCREMENT for table `temp_peminjaman`
 --
 ALTER TABLE `temp_peminjaman`
   MODIFY `Id_temp` int(11) NOT NULL AUTO_INCREMENT;
