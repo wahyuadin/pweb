@@ -16,7 +16,6 @@
         <?php
       //tambahkan dbconnect
       include('../dbconnect.php');
-      // include('formatbuku/lib.php');
 
       //query
       $query = "SELECT * FROM user";
@@ -40,7 +39,7 @@
         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="../master.php">Data Master</a>
+        <a class="nav-link" href="master.php">Data Master</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,10 +96,14 @@
     <label for="inputAddress2">Password</label>
     <input type="Password" class="form-control" name="password" placeholder="Masukan Password Baru" autofocus required>
   </div>
+  <div class="form-group">
+    <label for="inputAddress">NISN</label>
+    <input type="text" class="form-control" name="nisn" placeholder="Masukan NISN Anda" autofocus required>
+  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">No Telp</label>
-      <input type="text" class="form-control" name="level" placeholder="Masukan No Telepon" autofocus required>
+      <input type="text" class="form-control" name="telp" placeholder="Masukan No Telepon" autofocus required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputState">Status</label>

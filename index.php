@@ -100,7 +100,7 @@
   			<div class="card-body">
     			<h5 class="card-title">Data Siswa</h5>
     			<p class="card-text">Jumlah siswa yang ada <b>3</b> siswa</p>
-    			<a href="#" class="btn btn-primary">Data Siswa</a>
+    			<a href="data_siswa.php" class="btn btn-primary">Data Siswa</a>
   			</div>
 			</div>
    		</div>

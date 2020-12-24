@@ -1,5 +1,5 @@
 <?php
-    include "../dbconnect.php";
+    include "dbconnect.php";
  ?>
 
  <!doctype html>
@@ -18,7 +18,7 @@
     <!-- NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-  <a class="navbar-brand" href="../admin.php">Perpustakaan</a>
+  <a class="navbar-brand" href="index.php">Perpustakaan</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,32 +26,29 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../admin.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="list_master_admin.php">Data Master</a>
+        <a class="nav-link" href="master.php">Data Master</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Transaksi
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="list_peminjam_admin.php">Peminjaman</a>
-          <a class="dropdown-item" href="list_peminjam_admin.php">Pengembalian</a>
+          <a class="dropdown-item" href="peminjam_public.php">Peminjaman</a>
+          <a class="dropdown-item" href="peminjam_public.php">Pengembalian</a>
         </div>
       </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="../logout.php">Logout</a>
-      </li>
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Akun
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../login.php">Login</a>
-          <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a>
+          <a class="dropdown-item" href="login.php">Login</a>
+          <!-- <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a> -->
         </div>
-      </li> -->
+      </li>
      
     </ul>
     
@@ -62,13 +59,16 @@
 
     <!--akhir Navbar-->
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Perpustakaan</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css"> -->
 	<script src="js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -78,20 +78,22 @@
 <body>
 
 	<?php
-	include('../dbconnect.php');
+	//tambahkan dbconnect
+	include('dbconnect.php');
+
 
 	//query
-	$query = "SELECT * FROM pinjam";
+	$query = "SELECT * FROM user";
 
 	$result = mysqli_query($conn , $query);
 
 	?>
 
 	<div class="container bg-white" style="padding-top: 20px; padding-bottom: 20px;">
-		<h1>Data Peminjaman & Pengembalian</h1>
-		<p>E-Learning ini di buat untuk menyelesaikan salah satu UAS MK Pemograman Web </p>
+	<br>
+		<h3>Master Data Buku Perpustakaan</h3>
 		<hr>
-		<div class="row">
+		<!-- <div class="row"> -->
 			<!-- <div class="col-sm-4">
 				<h3>Form Tambah Buku</h3>
 				<form role="form" action="insert.php" method="post">
@@ -115,19 +117,19 @@
 				</form>
 				
 			</div> -->
-			<div class="col">
-				<h3>Tabel Daftar Buku</h3>
+			<div class="row-sm-8">
+				<br>
+				<h5>Tabel Data Siswa</h5>
 				<table class="table table-striped table-hover dtabel">
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Nama Peminjam</th>
-							<th>Kelas</th>
+							<th>Nama</th>
+							<th>No Telp</th>
 							<th>NISN</th>
-							<th>Nama Buku</th>
-							<th>Tanggal Pinjam</th>
-							<th>Tanggal Kembali</th>
-							<th>Aksi</th>
+							<!-- <th>Jenis Buku</th>
+							<th>Kode Buku</th> -->
+							<!-- <th>Aksi</th> -->
 						</tr>
 					</thead>
 					<tbody> 
@@ -138,22 +140,21 @@
 						?>
 						<tr>
 							<td><?php echo $no++; ?></td>
-							<td><?php echo $row['nama_lengkap']; ?></td>
-							<td><?php echo $row['kelas']; ?></td>
+							<td><?php echo $row['nama_depan']; ?> <?php echo $row['nama_belakang']; ?></td>
+							<td><?php echo $row['telp']; ?></td>
 							<td><?php echo $row['nisn']; ?></td>
-							<td><?php echo $row['judul_buku']; ?></td>
-							<td><?php echo $row['tgl_pinjam']; ?></td>
-							<td><?php echo $row['tgl_kembali']; ?></td>
-							<td>
-								<a href="verivikasi_peminjam_admin.php?id=<?php echo $row['id_peminjaman'];?>" class="btn btn-success" role="button">Edit</a>
-								<a href="delete_peminjam.php?id=<?php echo $row['id_peminjaman']?>" class="btn btn-danger" role="button">Hapus</a>
-							</td>
+							<!-- <td><?php echo $row['genre_buku']; ?></td>
+							<td><?php echo $row['kode_buku']; ?></td> -->
+							<!-- <td>
+								<a href="editform.php?id=<?php echo $row['id_buku'];?>" class="btn btn-success" role="button">Edit</a>
+								<a href="delete.php?id=<?php echo $row['id_buku']?>" class="btn btn-danger" role="button">Delete</a>
+							</td> -->
 						</tr>
+
 						<?php
 							}
 							mysqli_close($conn); 
 						?>
-						
 					</tbody>
 				</table>
 			</div>
@@ -174,5 +175,5 @@
 </html> 
 
 <?php
-	include "../footer.php";
+	include "footer.php";
 ?>

@@ -142,6 +142,7 @@
 						mysqli_close($conn);
 						?>
 					</select>
+					</div>
 				
 						<!-- <input type="text" name="jb" class="form-control" placeholder="Masukan Judul Peminjaman Buku" value=
 					</div> -->

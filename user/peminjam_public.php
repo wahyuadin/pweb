@@ -18,7 +18,7 @@
     <!-- NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-  <a class="navbar-brand" href="../admin.php">Perpustakaan</a>
+  <a class="navbar-brand" href="dasboard.php">Perpustakaan</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,18 +26,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../admin.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="dasboard.php">Home <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="list_master_admin.php">Data Master</a>
+        <a class="nav-link" href="master.php">Data Master</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropfdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Transaksi
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="list_peminjam_admin.php">Peminjaman</a>
-          <a class="dropdown-item" href="list_peminjam_admin.php">Pengembalian</a>
+          <a class="dropdown-item" href="peminjam_public.php">Peminjaman</a>
+          <a class="dropdown-item" href="peminjam_public.php">Pengembalian</a>
         </div>
       </li>
 	  <li class="nav-item">
@@ -48,7 +48,7 @@
           Akun
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../login.php">Login</a>
+          <a class="dropdown-item" href="login.php">Login</a>
           <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a>
         </div>
       </li> -->
@@ -68,7 +68,7 @@
 	<title>Perpustakaan</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"> -->
 	<script src="js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -78,7 +78,9 @@
 <body>
 
 	<?php
+	//tambahkan dbconnect
 	include('../dbconnect.php');
+	// include('../formatbuku/lib.php');
 
 	//query
 	$query = "SELECT * FROM pinjam";
@@ -89,7 +91,7 @@
 
 	<div class="container bg-white" style="padding-top: 20px; padding-bottom: 20px;">
 		<h1>Data Peminjaman & Pengembalian</h1>
-		<p>E-Learning ini di buat untuk menyelesaikan salah satu UAS MK Pemograman Web </p>
+		<p>E-Library ini di buat untuk menyelesaikan salah satu UAS MK Pemograman Web </p>
 		<hr>
 		<div class="row">
 			<!-- <div class="col-sm-4">
@@ -115,7 +117,7 @@
 				</form>
 				
 			</div> -->
-			<div class="col">
+			<div class="col-sm">
 				<h3>Tabel Daftar Buku</h3>
 				<table class="table table-striped table-hover dtabel">
 					<thead>
@@ -127,7 +129,7 @@
 							<th>Nama Buku</th>
 							<th>Tanggal Pinjam</th>
 							<th>Tanggal Kembali</th>
-							<th>Aksi</th>
+							<!-- <th>Aksi</th> -->
 						</tr>
 					</thead>
 					<tbody> 
@@ -144,10 +146,10 @@
 							<td><?php echo $row['judul_buku']; ?></td>
 							<td><?php echo $row['tgl_pinjam']; ?></td>
 							<td><?php echo $row['tgl_kembali']; ?></td>
-							<td>
-								<a href="verivikasi_peminjam_admin.php?id=<?php echo $row['id_peminjaman'];?>" class="btn btn-success" role="button">Edit</a>
-								<a href="delete_peminjam.php?id=<?php echo $row['id_peminjaman']?>" class="btn btn-danger" role="button">Hapus</a>
-							</td>
+							<!-- <td>
+								<a href="editform.php?id=<?php echo $row['id_user'];?>" class="btn btn-success" role="button">Edit</a>
+								<a href="delete.php?id=<?php echo $row['id_user']?>" class="btn btn-danger" role="button">Delete</a>
+							</td> -->
 						</tr>
 						<?php
 							}
