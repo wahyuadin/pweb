@@ -3,7 +3,7 @@
 session_start();
 
 // menghubungkan php dengan koneksi database
-include 'koneksi.php';
+include "dbconnect.php";
 
 // menangkap data yang dikirim dari form login
 $username = $_POST['username'];
@@ -11,7 +11,7 @@ $password = $_POST['password'];
 
 
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($koneksi,"SELECT * from admin where username='$username' and password='$password'");
+$login = mysqli_query($conn,"SELECT * FROM user WHERE username='$username' and password='$password'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
 
@@ -27,7 +27,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "admin";
 		// alihkan ke halaman dashboard admin
-		header("location:admin/admin.php");
+		header("location:admin.php");
 
 	// cek jika user login sebagai siswa
 	}else if($data['level']=="siswa"){
@@ -35,7 +35,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "siswa";
 		// alihkan ke halaman dashboard siswa
-		header("location:dasboard/dasboard.php");
+		header("location:user/dasboard.php");
 
 	// cek jika user login sebagai pengurus
 	}else if($data['level']=="pengurus"){

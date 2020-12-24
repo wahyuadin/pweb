@@ -1,5 +1,5 @@
-<?php 
-	include "koneksi.php";
+ <?php
+    include "dbconnect.php";
  ?>
 
  <!doctype html>
@@ -18,7 +18,7 @@
     <!-- NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-  <a class="navbar-brand" href="index.php">Perpustakaan</a>
+  <a class="navbar-brand" href="../index.php">Perpustakaan</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,15 +29,15 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="daftar.php">Data Master</a>
+        <a class="nav-link" href="../master.php">Data Master</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Transaksi
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="peminjaman.php">Peminjaman</a>
-          <a class="dropdown-item" href="pengembalian.php">Pengadaan</a>
+          <a class="dropdown-item" href="user/list_peminjam.php">Peminjaman</a>
+          <a class="dropdown-item" href="user/list_peminjam.php">Pengembalian</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -46,7 +46,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a>
+          <!-- <a class="dropdown-item" href="registrasi/registrasi.php">Daftar</a> -->
         </div>
       </li>
      

@@ -25,15 +25,15 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="daftar.php">Data Master</a>
+        <a class="nav-link" href="master.php">Data Master</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Transaksi
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="peminjaman.php">Peminjaman</a>
-          <a class="dropdown-item" href="pengembalian.php">Pengadaan</a>
+          <a class="dropdown-item" href="peminjam_public.php">Peminjaman</a>
+          <a class="dropdown-item" href="peminjam_public.php">Pengembalian</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -73,7 +73,7 @@
   			<div class="card-body">
     			<h5 class="card-title">Peminjaman</h5>
     			<p class="card-text">Jumlah transaksi peminjaman buku <b>5</b></p>
-    			<a href="#" class="btn btn-primary">Peminjaman</a>
+    			<a href="peminjam_public.php" class="btn btn-primary">Peminjaman</a>
   			</div>
 			</div>
    		</div>
@@ -82,7 +82,7 @@
   			<div class="card-body">
     			<h5 class="card-title">Pengembalian</h5>
     			<p class="card-text">Jumlah transaksi pengembalian buku <b>2</b></p>
-    			<a href="#" class="btn btn-primary">Pengembalian</a>
+    			<a href="peminjam_public.php" class="btn btn-primary">Pengembalian</a>
   			</div>
 			</div>
    		</div>
@@ -91,7 +91,7 @@
   			<div class="card-body">
     			<h5 class="card-title">Data Buku</h5>
     			<p class="card-text">Jumlah buku <br>yang tersedia <b>2</b></p>
-    			<a href="#" class="btn btn-primary">Data Buku</a>
+    			<a href="master.php" class="btn btn-primary">Data Buku</a>
   			</div>
 			</div>
    		</div>
